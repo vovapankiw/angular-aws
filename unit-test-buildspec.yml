@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - npm install -g @angular/cli@16.0.6
+
+  pre_build:
+    commands:
+      - npm install
+  build:
+    commands:
+      - ng test --watch=false --browsers=ChromeHeadless
